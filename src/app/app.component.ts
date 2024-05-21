@@ -9,7 +9,7 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
   constructor(private service: AppService) {}
-  title = 'gersonbsoft';
+  public title = 'gersonbsoft';
   public monedas_list: any[] = [];
   public tipos_list: any[] = [];
   public moneda1: string = 'USD';
@@ -74,6 +74,16 @@ export class AppComponent implements OnInit {
   }
 
   convert(): void {
+    if (this.monto === 0) {
+      console.log('no se convierte ');
+      return;
+    }
+    if (isNaN(this.monto)) {
+      alert('Ingrese un valor numérico');
+      this.monto = 0;
+      return;
+    }
+
     const rateUSD = this.tipos_list.find(
       (item) => item.code === this.moneda1
     ).value;
@@ -85,6 +95,10 @@ export class AppComponent implements OnInit {
   }
 
   change(): void {
+    if (this.monto === 0) {
+      console.log('no se cambia');
+      return;
+    }
     const temp = this.moneda1;
     this.moneda1 = this.moneda2;
     this.moneda2 = temp;
