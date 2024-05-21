@@ -7,7 +7,7 @@
     <div class="text">
       <img src="../assets/asistant.png" class="asis" />
       <p class="ti-main">
-        cambia tus <span>{{ moneda1 }}</span> a <span>{{ moneda2 }}</span> al
+        Cambia tus <span>{{ moneda1 }}</span> a <span>{{ moneda2 }}</span> al
         instante.
       </p>
     </div>
@@ -77,5 +77,16 @@
         </mat-form-field>
       </div>
     </div>
+    <button
+      mat-raised-button
+      class="but"
+      color="primary"
+      [disabled]="historial.length == 0"
+      (click)="verhistorial()"
+    >
+      historial
+    </button>
   </div>
 </div>
+
+<app-historial [historial]="historial" *ngIf="isVisible"></app-historial>

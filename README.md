@@ -1,18 +1,35 @@
-# Gersonbsoft
+# GersonMamani
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+### BuildSoft Challenge:
 
-## Development server
+Este proyecto está desarrollado con :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 16
+- node v18.19.0
+- Angular material
+- Axios
 
-## Code scaffolding
+## Configuración del Proyecto:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Instalar el Node modules
+   ```bash
+    npm i
+   ```
+2. Ejecutar el Proyecto:
+   ```bash
+   ng serve
+   ```
+3. Visualizar el proyecto:
+   ```bash
+   http://localhost:4200/
+   ```
 
-## Build
+## Project Deployment
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Este proyecto a sido desplegado mediante la plataforma Vercel
+  ```bash
+    https://buildsofreto.vercel.app/
+  ```
 
 ## Running unit tests
 

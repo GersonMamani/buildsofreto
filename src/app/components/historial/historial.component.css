@@ -1,0 +1,35 @@
+table {
+  width: 75%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-bottom: 22px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.titu_history {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  table {
+    width: 87%;
+  }
+}

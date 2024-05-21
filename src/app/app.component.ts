@@ -18,6 +18,9 @@ export class AppComponent implements OnInit {
   public resultado: number = 0;
   public most3: any = 0;
   public usuarioFormGroup: FormGroup = new FormGroup({});
+  // historial
+  public historial: any[] = [];
+  public isVisible: boolean = false;
 
   ngOnInit(): void {
     this.listar_monedas();
@@ -66,7 +69,7 @@ export class AppComponent implements OnInit {
           const newObject = { code: key, value };
           this.tipos_list.push(newObject);
         }
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => {
         console.error(error);
@@ -92,6 +95,18 @@ export class AppComponent implements OnInit {
     ).value;
     this.resultado = (this.monto / rateUSD) * rateOther;
     this.most3 = this.resultado.toFixed(2);
+
+    // pushear para el historial
+    // Add conversion details to history
+    if (this.monto !== 0) {
+      this.historial.push({
+        date: new Date().toISOString(), // Add timestamp
+        monto_uno: this.monto,
+        tipo_moneda1: this.moneda1,
+        result: this.most3,
+        tipo_moneda2: this.moneda2,
+      });
+    }
   }
 
   change(): void {
@@ -104,5 +119,11 @@ export class AppComponent implements OnInit {
     this.moneda2 = temp;
     this.monto = this.most3;
     this.convert();
+  }
+
+  verhistorial(): void {
+    // console.log(this.historial);
+    this.isVisible = !this.isVisible;
+    // este boton se abre cuando clickeas y se cierra cuando vuelves a cliquear
   }
 }

@@ -6,9 +6,10 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HistorialComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

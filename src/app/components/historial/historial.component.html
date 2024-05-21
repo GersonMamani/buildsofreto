@@ -1,0 +1,17 @@
+<p class="titu_history">Historial</p>
+<div class="historial">
+  <table>
+    <tr>
+      <th>Monto 1</th>
+      <th>Tipo de moneda 1</th>
+      <th>Resultado</th>
+      <th>Tipo de moneda 2</th>
+    </tr>
+    <tr *ngFor="let item of historial">
+      <td>{{ item.monto_uno }}</td>
+      <td>{{ item.tipo_moneda1 }}</td>
+      <td>{{ item.result }}</td>
+      <td>{{ item.tipo_moneda2 }}</td>
+    </tr>
+  </table>
+</div>
