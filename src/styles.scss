@@ -1,0 +1,220 @@
+/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$paleta: (
+  50: #eae4ee,
+  100: #cbbcd5,
+  200: #a88fb9,
+  300: #85629d,
+  400: #6b4188,
+  500: #511f73,
+  600: #4a1b6b,
+  700: #401760,
+  800: #371256,
+  900: #270a43,
+  A100: #b77aff,
+  A200: #9c47ff,
+  A400: #8014ff,
+  A700: #7300fa,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$paleta2: (
+  50: #e5f4f3,
+  100: #bee3e0,
+  200: #93d1cc,
+  300: #67beb8,
+  400: #47b0a8,
+  500: #26a299,
+  600: #229a91,
+  700: #1c9086,
+  800: #17867c,
+  900: #0d756b,
+  A100: #a7fff5,
+  A200: #74ffef,
+  A400: #41ffea,
+  A700: #28ffe7,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$paleta3: (
+  50: #fdf7e4,
+  100: #fbecbd,
+  200: #f9df91,
+  300: #f6d264,
+  400: #f4c843,
+  500: #f2be22,
+  600: #f0b81e,
+  700: #eeaf19,
+  800: #eca714,
+  900: #e8990c,
+  A100: #ffffff,
+  A200: #fff3e0,
+  A400: #ffdfad,
+  A700: #ffd593,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$gerson-mamani-primary: mat.define-palette($paleta);
+$gerson-mamani-accent: mat.define-palette($paleta2);
+$gerson-mamani-warn: mat.define-palette($paleta3);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$gerson-mamani-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $gerson-mamani-primary,
+      accent: $gerson-mamani-accent,
+      warn: $gerson-mamani-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($gerson-mamani-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-image: radial-gradient(
+    circle at top left,
+    white 0%,
+    #e3d0ec 50%,
+    #7fb5e7 100%
+  ) !important;
+  background-attachment: fixed;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-datepicker-toggle-default-icon {
+  color: #f2be22;
+}
+
+.mat-form-field.mat-warn .mat-input-element,
+.mat-form-field-invalid .mat-input-element {
+  caret-color: #f2be22;
+  // color: #f2be22;
+  color: rgb(141, 141, 141);
+  font-weight: bold;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  opacity: 0;
+  opacity: inherit;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius: 0 5px 5px 0;
+  border-left-style: none;
+  flex-grow: 1;
+  border-radius: 20px;
+  padding-left: 5px;
+  // background-color: #d5edff;
+  background-color: #ebeff1;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius: 0 5px 5px 0;
+  border-left-style: none;
+  flex-grow: 1;
+  border-radius: 24px !important;
+}
+.mat-form-field.mat-accent .mat-input-element {
+  caret-color: #26a299;
+  color: rgb(141, 141, 141);
+  font-weight: bold;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 24px 16px;
+  // border: 1px solid red;
+  margin-bottom: 1px;
+}
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 0;
+  box-shadow: none;
+  width: 13rem;
+}
+
+.mat-option {
+  border-bottom: 1px solid #e5e5e5;
+}
+.mat-select-value-text {
+  color: #80848e;
+}
+.mat-select-arrow {
+  color: #26a299;
+}
